@@ -68,12 +68,16 @@ score_sound = pygame.mixer.Sound('miss_sound.wav')
 p1_obj = Paddle(WHITE, 10, 100)
 p1_obj.rect.x = 0
 p1_obj.rect.y = 200
+
 # position of player 2
 p2_obj = Paddle(WHITE, 10, 100)
 p2_obj.rect.x = 690
 p2_obj.rect.y = 200
 
 ball = Ball(WHITE, 10, 10)
+
+p1_score = 0
+p2_score = 0
 
 all_sprites_list = pygame.sprite.Group()
 
@@ -83,9 +87,6 @@ all_sprites_list.add(ball)
 
 in_progress = True
 timer = pygame.time.Clock()
-
-p1_score = 0
-p2_score = 0
 
 # main game loop
 while in_progress:
@@ -166,6 +167,6 @@ while in_progress:
 
     pygame.display.flip()
 
-    timer.tick(60)
+    timer.tick(60)      # 60 FPS
 
 pygame.quit()
